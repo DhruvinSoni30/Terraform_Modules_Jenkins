@@ -7,7 +7,7 @@ resource "aws_instance" "demo_instance_public_1" {
   availability_zone      = data.aws_availability_zones.az.names[0]
   subnet_id              = var.public_subnet_az1
   key_name               = var.key_id
-  user_data              = "${file("/Users/dhruvins/Desktop/Terraform_Modules_Jenkins/modules/ec2/jenkins.sh")}"
+  user_data              = file("/Users/dhruvins/Desktop/Terraform_Modules_Jenkins/modules/ec2/jenkins.sh")
 
   tags = {
     "Name" = "${var.project_name}-public-instance"
